@@ -158,7 +158,10 @@ target_include_directories(${PROJECT_NAME}-${SUB_PROJECT} PUBLIC
 
 set_property(TARGET ${PROJECT_NAME}-${SUB_PROJECT} PROPERTY C_STANDARD 11)
 
-target_link_libraries(${PROJECT_NAME}-${SUB_PROJECT} m)
+#target_link_libraries(${PROJECT_NAME}-${SUB_PROJECT} m)
+target_link_libraries(${PROJECT_NAME}-${SUB_PROJECT} m ${BOARD} ) # Not sure why I had to add this. Without explicitly
+                                                                  # linking to ${BOARD}, make would generate empty
+                                                                  # bin files.
 
 #---------------------------------------------------------------------------------------
 # Debugging and Binutils

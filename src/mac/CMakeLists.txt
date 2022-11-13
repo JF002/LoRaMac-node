@@ -131,7 +131,7 @@ add_library(${PROJECT_NAME} OBJECT EXCLUDE_FROM_ALL ${MAC_BUILD_SOURCES})
 # Loops through all regions and add compile time definitions for the enabled ones.
 foreach( REGION ${REGION_LIST} )
     if(${REGION})
-        target_compile_definitions(${PROJECT_NAME} PUBLIC -D"${REGION}")
+        target_compile_definitions(${PROJECT_NAME} PUBLIC -D${REGION})
     endif()
 endforeach()
 
