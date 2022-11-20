@@ -248,6 +248,8 @@ int main( void )
     // initialized and activated.
     LmHandlerPackageRegister( PACKAGE_ID_COMPLIANCE, &LmhpComplianceParams );
 
+    // TODO check if the device has already joined the network. Send join request
+    // only if the device has not joined yet OR after checking the status (LinkCheckReq)
     LmHandlerJoin( );
 
     StartTxProcess( LORAMAC_HANDLER_TX_ON_TIMER );

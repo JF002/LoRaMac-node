@@ -7,3 +7,6 @@
 [submodule "src/boards/mcu/bl602/bl_mcu_sdk"]
 	path = src/boards/mcu/bl602/bl_mcu_sdk
 	url = git@github.com:JF002/bl_mcu_sdk.git
+[submodule "src/boards/Pinecone/littlefs"]
+	path = src/boards/Pinecone/littlefs
+	url = https://github.com/littlefs-project/littlefs.git

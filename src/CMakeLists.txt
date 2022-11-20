@@ -184,6 +184,8 @@ elseif(BOARD STREQUAL B-L072Z-LRWAN1)
     # Configure radio
     set(RADIO sx1276 CACHE INTERNAL "Radio sx1276 selected")
 elseif(BOARD STREQUAL Pinecone)
+    add_definitions(-DCONFIG_CUSTOM_PRINTF)
+
     set(ENV{BL_SDK_BASE} ${CMAKE_CURRENT_SOURCE_DIR}/boards/mcu/bl602/bl_mcu_sdk)
     set(bouffalo_sdk_DIR ${CMAKE_CURRENT_SOURCE_DIR}/boards/mcu/bl602/bl_mcu_sdk/cmake)
     set(BL_BOARD bl602dk)
@@ -194,7 +196,6 @@ elseif(BOARD STREQUAL Pinecone)
     include(bl602)
     add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/boards/Pinecone)
     set(RADIO sx126x CACHE INTERNAL "Radio sx126x selected")
-    add_definitions(-Dprintf=bflb_printf)
     message(Building for Pinecone)
 endif()
 
